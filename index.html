@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Allan Pereira</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <header id="header">
+      <span id="banner">
+        <a onclick="openPage('index','conteudo')" id="logo__container">
+          <img src="./img/header__logo.svg" alt="hastag" />
+          <h3>Allan</h3>
+        </a>
+        <nav id="navbar">
+          <ul id="menu">
+            <li><a onclick="openPage('projects','conteudo')">Projects</a></li>
+            <li><a onclick="openPage('about','conteudo')">About</a></li>
+          </ul>
+          <label id="btn__hamburguer" for="btn__menu"
+            ><span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </label>
+        </nav>
+        <button id="btn__menu">menu</button>
+      </span>
+    </header>
+    <section id="conteudo">
+      <main id="container__profile">
+        <div id="profile">
+          <img id="profile__logo" src="./img/profile.png" alt="picture" />
+          <h1>Allan Pereira</h1>
+          <p>web developer</p>
+        </div>
+      </main>
+      <div id="midia__social">
+        <a href="https://github.com/allanpereira99"
+          ><img class="midia__icons" src="./img/github.svg" alt="github"
+        /></a>
+        <a href="https://t.me/allanpereira99"
+          ><img class="midia__icons" src="./img/telegram.png" alt="telegram"
+        /></a>
+        <a href="mailto:allan.pereira.dev@gmail.com"
+          ><img class="midia__icons" src="./img/mail.png" alt="email"
+        /></a>
+      </div>
+    </section>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
