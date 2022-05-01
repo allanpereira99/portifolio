@@ -6,20 +6,34 @@ function toogleMenu() {
   nav.classList.toggle("active");
 }
 btnMenu.addEventListener("click", toogleMenu);
-
 // No Refrash
-function openPage(page, id) {
+const index = "./index.html";
+function openPage(page, id, push = true) {
   let indice = page;
   let target = id;
+  let url = `./pages/${indice}.html`;
   if (page != "index") {
-    let url = `./html/${indice}.html`;
     axios(url)
       .then(
         (response) =>
           (document.getElementById(target).innerHTML = response.data)
       )
-      .then(() => nav.classList.remove("active"));
+      .then(() => nav.classList.remove("active"))
+      .then(() => {
+        if (push) {
+          history.pushState({ id }, null, url.replace("pages/", ""));
+        }
+      });
   } else {
-    window.location.reload();
+    window.location.href = index;
   }
 }
+window.onpopstate = (e) => {
+  if (e.state) {
+    const regex = /\w+\./g;
+    let page = window.location.href.match(regex);
+    openPage(`${page[2].replace(".", "")}`, e.state.id, false);
+  } else {
+    window.location.href = index;
+  }
+};
