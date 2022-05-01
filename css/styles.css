@@ -21,7 +21,9 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+#header a {
+  cursor: pointer;
+}
 #banner {
   display: flex;
   width: 90%;
