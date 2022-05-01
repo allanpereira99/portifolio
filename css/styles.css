@@ -162,3 +162,31 @@ body {
     top: -18px;
   }
 }
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #333;
+    color: white;
+  }
+  #header {
+    background: rgb(48, 48, 48);
+  }
+  #menu li a,
+  #logo__container h3 {
+    color: white;
+  }
+  .invert {
+    filter: invert(100%);
+  }
+}
+@media (prefers-color-scheme: dark) and (max-width: 600px) {
+  #menu li {
+    border-bottom: 2px solid #333;
+  }
+  #menu {
+    background-color: rgb(48, 48, 48);
+  }
+  .bar {
+    background-color: white;
+    border-color: white;
+  }
+}
